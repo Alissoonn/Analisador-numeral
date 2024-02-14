@@ -1,12 +1,29 @@
-var num = document.getElementById('input#fnum')
-var lista = document.getElementById('select#flista')
-var fina = document.getElementById('div#res')
+let num = document.querySelector('input#fnum')
+let lista = document.querySelector('select#flista')
+let res = document.querySelector('div#res')
 let valores = []
 
-function adicionar(){
-    if(inumero(num.value) && !ilista(num.value)){
-
-    }else{
-        window.alert('Valor invãlido ou não encontrado na lista.')
+function isNumero(n){
+    if(Number(n) >= 1 && Number(n) <= 100) {
+        return true
+    } else {
+        return false
     }
 }
+
+function inLista(n, lista){
+    if (lista.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function adicionar() {
+    if(isNumero(num.value) && !inLista(num.value , valores)) {
+        window.alert('Tudo OK')
+    }else{
+        window.alert('Valor invalido ou não encontrado na lista.')
+    }
+}
+
