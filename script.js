@@ -12,7 +12,7 @@ function isNumero(n){
 }
 
 function inLista(n, lista){
-    if (lista.indexOf(Number(n)) != -1) {
+    if (lista.indexOF(Number(n)) != -1) {
         return true
     } else {
         return false
@@ -22,7 +22,7 @@ function inLista(n, lista){
 function adicionar() {
     if(isNumero(num.value) && !inLista(num.value , valores)) {
         window.alert('Tudo OK')
-    }else{
+    } else {
         window.alert('Valor invalido ou não encontrado na lista.')
     }
 }
